@@ -11,6 +11,43 @@ namespace Euler
         static void Main(string[] args)
         {
             Problem8_LargestProductInASeries();
+            Console.WriteLine('\n');
+            Problem7_10001Prime();
+        }
+        public static void Problem7_10001Prime()
+        {
+            int count = 1;
+            int index = 3;
+            while (true)
+            {
+                int num = 1;
+                bool PrimeNum = true;
+                for (int i = 2; i <= index; i++)
+                {
+                    if (index % i == 0)
+                    {
+                        num++;
+                        if (num > 2)
+                        {
+                            PrimeNum = false;
+                            break;
+                        }
+                    }
+
+                }
+                if (PrimeNum)
+                {
+                    count++;
+                    if (count == 10001)
+                    {
+                        Console.WriteLine("The 10001st Prime Number is " + index);
+
+
+                    }
+                }
+                index++;
+
+            }
         }
 
         //Finds the largest product of 13 consecutive numbers in a series of 1000 numbers
@@ -36,7 +73,7 @@ namespace Euler
             
             Console.WriteLine("The Largest product of 13 consecutive numbers in the series is: " + stored); //Prints the largest product
             
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }
