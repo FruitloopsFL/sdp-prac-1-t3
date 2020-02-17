@@ -10,11 +10,18 @@ namespace Euler
     {
         static void Main(string[] args)
         {
+           
+            
+            Problem7_10001Prime();
+            Console.WriteLine('\n');
+            Console.ReadLine(); //enter to see next euler problem
             Problem8_LargestProductInASeries();
             Console.WriteLine('\n');
-            Problem7_10001Prime();
+            Console.ReadLine(); //enter to see next euler problem
+            Problem1_Multiplesof3and5();
+
         }
-        public static void Problem7_10001Prime()
+        public static void Problem7_10001Prime() 
         {
             int count = 1;
             int index = 3;
@@ -41,13 +48,48 @@ namespace Euler
                     if (count == 10001)
                     {
                         Console.WriteLine("The 10001st Prime Number is " + index);
-
+                        break;
 
                     }
                 }
                 index++;
 
             }
+            
+            
+        }
+
+
+        public static void Problem1_Multiplesof3and5() //tandza khoza
+         {
+            
+            List<int> numbers = new List<int>();
+            for (int i = 3; i < 1000; i += 3)
+            {
+                numbers.Add(i);
+
+            }
+            for (int j = 5; j < 1000; j += 5)
+            {
+                numbers.Add(j);
+
+            }
+            Console.WriteLine("list of natural numbers below 1000");
+            int sum = 0;
+             foreach(int x in numbers )
+             {
+                Console.WriteLine(x);
+                sum = sum + x;
+               
+            }
+        
+
+            numbers.ForEach(Console.WriteLine);
+            Console.WriteLine("sum of all the multiples of 3 or 5 below 1000 = "+sum);
+            Console.ReadLine();
+
+
+
         }
 
         //Finds the largest product of 13 consecutive numbers in a series of 1000 numbers
